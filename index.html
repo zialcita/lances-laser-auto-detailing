@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script>
 /* ===== SITE CONFIG — the ONE place to edit contact details =====
-   Replace the placeholder below with Lance's real phone, e.g. "808-555-1234".
+   Lance's phone (display format). Links use +1 automatically.
    Every "Call/Text" button and the booking form use this value. */
-window.LANCE_PHONE = "[Lance's number]";
+window.LANCE_PHONE = "(808) 481-7043";
 </script>
 <title>Lance's Laser Auto Detailing | Honolulu Mobile & Kaimuki Drop-Off Full Detail | Black Friday 50% Off</title>
 <meta name="description" content="High-end full auto detailing in Honolulu. Mobile service at your home or office ($260) or drop-off in Kaimuki ($200). Black Friday special: 50% off, limited time. 4–6 hour showroom-level detail.">
@@ -22,7 +22,7 @@ window.LANCE_PHONE = "[Lance's number]";
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="img/hero.webp">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AutoWash","name":"Lance's Laser Auto Detailing","description":"High-end mobile and drop-off full auto detailing in Honolulu, Hawaii. Drop-off location in Kaimuki.","url":"https://zialcita.github.io/lances-laser-auto-detailing/","image":"https://zialcita.github.io/lances-laser-auto-detailing/img/og.jpg","priceRange":"$$","areaServed":{"@type":"City","name":"Honolulu"},"address":{"@type":"PostalAddress","addressLocality":"Honolulu","addressRegion":"HI","addressCountry":"US"},
+{"@context":"https://schema.org","@type":"AutoWash","name":"Lance's Laser Auto Detailing","description":"High-end mobile and drop-off full auto detailing in Honolulu, Hawaii. Drop-off location in Kaimuki.","url":"https://zialcita.github.io/lances-laser-auto-detailing/","image":"https://zialcita.github.io/lances-laser-auto-detailing/img/og.jpg","telephone":"+1-808-481-7043","priceRange":"$$","areaServed":{"@type":"City","name":"Honolulu"},"address":{"@type":"PostalAddress","addressLocality":"Honolulu","addressRegion":"HI","addressCountry":"US"},
 "makesOffer":[{"@type":"Offer","name":"Full Auto Detail — Mobile (we come to you)","price":"260","priceCurrency":"USD"},{"@type":"Offer","name":"Full Auto Detail — Drop-off in Kaimuki","price":"200","priceCurrency":"USD"}],
 "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5"},
 "review":[{"@type":"Review","author":{"@type":"Person","name":"Miya"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}},{"@type":"Review","author":{"@type":"Person","name":"Martin"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}},{"@type":"Review","author":{"@type":"Person","name":"Taiga"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}}]}
@@ -367,7 +367,7 @@ footer{padding:36px 0 110px;color:var(--mut);font-size:.88rem;border-top:1px sol
       <li>4–6 hour, high-end full detail inside and out</li>
       <li>Rated 5 stars by Honolulu customers</li>
     </ul>
-    <div class="callbox">Call/Text: <a class="js-phone" href="#book">[Lance's number]</a></div>
+    <div class="callbox">Call/Text: <a class="js-phone" href="tel:+18084817043">(808) 481-7043</a></div>
   </div>
   <form id="bookform" novalidate>
     <label>Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
@@ -392,11 +392,11 @@ footer{padding:36px 0 110px;color:var(--mut);font-size:.88rem;border-top:1px sol
   <p style="margin-top:6px">© <span id="yr"></span> Lance's Laser Auto Detailing</p>
 </div></footer>
 
-<div class="mbar"><div class="p"><span>Black Friday</span><b>50% OFF</b></div><a href="#book" class="btn btn-p">Book Now</a><a class="btn btn-g js-phone" href="#book">Call/Text</a></div>
+<div class="mbar"><div class="p"><span>Black Friday</span><b>50% OFF</b></div><a href="#book" class="btn btn-p">Book Now</a><a class="btn btn-g js-phone" href="tel:+18084817043">Call/Text</a></div>
 
 <script>
 (function(){
-  var P=window.LANCE_PHONE||"", ok=/\d{7,}/.test(P.replace(/\D/g,"")), digits=P.replace(/[^\d+]/g,"");
+  var P=window.LANCE_PHONE||"", ok=/\d{7,}/.test(P.replace(/\D/g,"")), d10=P.replace(/\D/g,""), digits=(d10.length===10?"+1"+d10:"+"+d10);
   document.querySelectorAll(".js-phone").forEach(function(a){
     if(ok){a.href="tel:"+digits; if(a.closest(".callbox")) a.textContent=P;}
     else if(a.closest(".callbox")) a.textContent=P;
